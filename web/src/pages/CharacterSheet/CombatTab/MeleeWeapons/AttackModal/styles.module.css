@@ -1,0 +1,87 @@
+.prompt {
+  margin: 0 0 12px;
+  color: var(--c-5b6f63);
+}
+
+.skillList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.skillRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 12px;
+  color: var(--c-3d5547);
+}
+
+.change {
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--c-c8d3c8);
+  border-radius: 8px;
+  color: var(--c-20392e);
+  background: var(--c-ffffff);
+  font: inherit;
+  cursor: pointer;
+}
+
+.spend {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid var(--c-d9e2d6);
+  border-radius: 10px;
+  background: var(--c-f6f9f4);
+}
+
+.damage {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.damage strong {
+  font-size: 1.8rem;
+}
+
+.left {
+  margin: 0;
+  color: var(--c-5b6f63);
+}
+
+.spendButtons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.record {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+  border: 1px solid var(--c-c8d3c8);
+  border-radius: 8px;
+  color: var(--c-20392e);
+  background: var(--c-ffffff);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.record:disabled {
+  color: var(--c-5b6f63);
+  background: var(--c-f6f9f4);
+  cursor: default;
+}
+
+.dofRoll {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

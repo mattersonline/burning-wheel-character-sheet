@@ -1,0 +1,34 @@
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 31px 0 15px;
+}
+
+.first {
+  margin-top: 35px;
+}
+
+.snug {
+  margin-top: 14px;
+}
+
+.heading > span {
+  color: var(--c-b07552);
+  font-family: Consolas, monospace;
+  font-size: 10px;
+}
+
+.heading h2 {
+  margin: 0;
+  color: var(--c-263d31);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.heading i {
+  height: 1px;
+  flex: 1;
+  background: var(--c-e8ebe5);
+}

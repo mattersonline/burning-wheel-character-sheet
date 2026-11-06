@@ -1,0 +1,54 @@
+.die {
+  display: block;
+  width: 52px;
+  height: 52px;
+  transition: opacity 200ms ease;
+}
+
+.face {
+  fill: var(--c-ffffff);
+  stroke: var(--c-315a46);
+  stroke-width: 0.5;
+}
+
+.pip {
+  fill: var(--c-20392e);
+}
+
+.spinning {
+  animation: spin 650ms linear infinite;
+}
+
+.hit .face {
+  fill: var(--c-e4f2e2);
+  stroke: var(--c-2f7a4b);
+  stroke-width: 0.8;
+}
+
+.hit .pip {
+  fill: var(--c-1c5a36);
+}
+
+.miss {
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg) scale(0.92);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.08);
+  }
+
+  to {
+    transform: rotate(360deg) scale(0.92);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinning {
+    animation: none;
+  }
+}

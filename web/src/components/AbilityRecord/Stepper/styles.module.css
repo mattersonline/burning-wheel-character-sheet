@@ -1,0 +1,56 @@
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.step {
+  display: grid;
+  width: 40px;
+  height: 44px;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  color: var(--c-315a46);
+  background: var(--c-eef3ec);
+  font: inherit;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.step:active:not(:disabled) {
+  background: var(--c-d9e5d7);
+}
+
+.step:disabled {
+  color: var(--c-b5bdb3);
+  cursor: default;
+}
+
+.value {
+  min-width: 34px;
+  color: var(--c-20392e);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  text-align: center;
+}
+
+.compact .step {
+  width: 34px;
+  height: 40px;
+  font-size: 18px;
+}
+
+.compact .value {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  min-width: 0;
+  place-items: center;
+  border: 2px solid var(--c-9eaf9d);
+  border-radius: 50%;
+  font-size: 16px;
+}

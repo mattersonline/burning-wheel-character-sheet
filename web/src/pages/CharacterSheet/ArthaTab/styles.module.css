@@ -1,0 +1,35 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 12px;
+}
+
+.card {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 18px 14px 16px;
+  border: 1px solid var(--c-dfe5dc);
+  border-radius: 8px;
+  background: var(--c-ffffff);
+}
+
+.name {
+  margin: 0;
+  color: var(--c-20392e);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.hint {
+  margin: 0 0 8px;
+  color: var(--c-788176);
+  font-size: 12px;
+  text-align: center;
+}
+
+.card > div > span {
+  min-width: 56px;
+  font-size: 40px;
+}

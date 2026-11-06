@@ -1,0 +1,26 @@
+.addButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  margin-top: 12px;
+  padding: 0 12px;
+  border: 1px dashed var(--c-9eaf9d);
+  border-radius: 3px;
+  color: var(--c-315a46);
+  background: var(--c-f9fbf8);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  border-color: var(--c-527a5d);
+  background: var(--c-f0f5ef);
+}
+
+.addButton > span {
+  font-size: 17px;
+  font-weight: 400;
+}

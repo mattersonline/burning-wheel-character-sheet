@@ -1,0 +1,178 @@
+.root {
+  container-type: inline-size;
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+/* The blocks never wrap; they shrink instead, and the identity moves above them when space is tight. */
+.blocks {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: nowrap;
+  gap: 14px;
+  min-width: 0;
+}
+
+.blocks > * {
+  flex: 1 1 auto;
+}
+
+.identity {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 170px;
+  padding-right: 6px;
+}
+
+.identity p {
+  margin: 0;
+}
+
+/* Bottom of the identity column; moves to the far right of the line when the blocks drop below. */
+.fate {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.name {
+  color: var(--c-20392e);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.details {
+  color: var(--c-5e6c60);
+  font-size: 14px;
+}
+
+.recordId {
+  color: var(--c-939b91);
+  font-family: Consolas, monospace;
+  font-size: 12px;
+}
+
+.block {
+  min-width: 0;
+  padding: 10px 16px 12px;
+  border: 1px solid var(--c-e1e8df);
+  border-radius: 4px;
+  background: var(--c-ffffff);
+  text-align: center;
+}
+
+.heading {
+  margin: 0 0 8px;
+  color: var(--c-57765d);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.abilities {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 4px 8px;
+}
+
+.ability {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 80px;
+  min-height: 44px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--c-788176);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ability:hover,
+.ability:focus-visible {
+  background: var(--c-eef3ec);
+}
+
+.abilityName {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.abilityValue {
+  color: var(--c-20392e);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Driven by the header's own width (not the viewport) so it matches when the blocks wrap below the identity. */
+@container (max-width: 1000px) {
+  .summary .identity {
+    flex-direction: row;
+    flex-basis: 100%;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 2px 14px;
+    padding-right: 56px;
+  }
+
+  .fate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Result goes left of the ball so the ball itself sits in the corner. */
+  .fate > * {
+    flex-direction: row-reverse;
+  }
+
+  .blocks {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .block {
+    padding-inline: 8px;
+  }
+
+  .abilities {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .ability {
+    min-width: 0;
+    padding-inline: 2px;
+  }
+
+  .abilityName {
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .abilityName {
+    font-size: 9px;
+  }
+
+  .abilityValue {
+    font-size: 18px;
+  }
+}

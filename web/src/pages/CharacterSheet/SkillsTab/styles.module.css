@@ -1,0 +1,18 @@
+.list {
+  display: grid;
+  gap: 10px;
+}
+
+.abilities {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
+  gap: 10px;
+}
+
+.learningList {
+  margin-bottom: 6px;
+}
+
+.legacy {
+  margin-top: 24px;
+}

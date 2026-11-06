@@ -1,0 +1,8 @@
+.longNotes {
+  display: grid;
+  gap: 18px;
+}
+
+.longNotes label textarea {
+  min-height: 180px;
+}

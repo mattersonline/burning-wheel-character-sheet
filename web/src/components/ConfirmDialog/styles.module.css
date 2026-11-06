@@ -1,0 +1,60 @@
+.dialog {
+  width: min(400px, calc(100vw - 32px));
+  padding: 22px;
+  border: 1px solid var(--c-9eaf9d);
+  border-radius: 8px;
+  color: var(--c-20392e);
+  background: var(--c-ffffff);
+  box-shadow: 0 18px 50px rgb(32 57 46 / 0.3);
+}
+
+.dialog::backdrop {
+  background: rgb(32 57 46 / 0.45);
+}
+
+.title {
+  margin: 0 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.message {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel,
+.confirm {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.cancel {
+  border: 1px solid var(--c-c8d3c9);
+  color: var(--c-2f5a42);
+  background: var(--c-ffffff);
+}
+
+.confirm {
+  border: 1px solid var(--c-9a4e3e);
+  color: var(--c-ffffff);
+  background: var(--c-9a4e3e);
+}
+
+.confirm:hover {
+  background: var(--c-823f31);
+}

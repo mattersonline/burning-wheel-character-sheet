@@ -1,0 +1,18 @@
+.removeButton {
+  min-width: 44px;
+  min-height: 40px;
+  margin-left: auto;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--c-9a4e3e);
+  background: transparent;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.removeButton:hover {
+  background: var(--c-fbefeb);
+}

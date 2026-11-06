@@ -1,0 +1,51 @@
+.grid {
+  width: 100%;
+  border-collapse: separate;
+  table-layout: fixed;
+  border-spacing: 3px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.grid th {
+  padding: 4px 0;
+  color: var(--c-57765d);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.tolerance {
+  height: 26px;
+  border-radius: 3px;
+  color: var(--c-ffffff);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.inBand {
+  background: var(--c-e9efe7);
+}
+
+.start {
+  background: var(--c-57765d);
+}
+
+.bubble {
+  display: block;
+  width: 100%;
+  max-width: 44px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  min-height: 36px;
+  padding: 0;
+  border: 1px solid var(--c-cfdccb);
+  border-radius: 50%;
+  background: var(--c-fafbf9);
+  cursor: pointer;
+}
+
+.bubble.filled {
+  border-color: var(--c-8f3b2c);
+  background: var(--c-8f3b2c);
+}

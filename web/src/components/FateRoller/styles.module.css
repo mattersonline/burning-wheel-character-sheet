@@ -1,0 +1,155 @@
+.roller {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button {
+  position: relative;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--c-315a46);
+  border-radius: 50%;
+  color: var(--c-315a46);
+  background: var(--c-ffffff);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.button:active {
+  background: var(--c-e8f0ea);
+}
+
+.ball {
+  display: grid;
+  place-items: center;
+  animation: wobble 0.45s ease;
+}
+
+.six {
+  animation:
+    wobble 0.45s ease,
+    glow 1.4s ease-out;
+  color: var(--c-b8861b);
+}
+
+.burst {
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--c-e0b43c);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: burst 1.1s ease-out forwards;
+}
+
+.result {
+  min-width: 28px;
+  color: var(--c-20392e);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+.result > span {
+  display: inline-block;
+  animation: pop 0.35s ease;
+}
+
+.sixResult {
+  color: var(--c-b8861b);
+}
+
+.sixResult > span {
+  animation:
+    pop 0.35s ease,
+    sparkle 1.4s ease-out;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-14deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(14deg) scale(1.1);
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 0 rgb(224 180 60 / 0%));
+  }
+  30% {
+    filter: drop-shadow(0 0 8px rgb(224 180 60 / 100%));
+  }
+  100% {
+    filter: drop-shadow(0 0 0 rgb(224 180 60 / 0%));
+  }
+}
+
+@keyframes burst {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    text-shadow: 0 0 0 rgb(224 180 60 / 0%);
+  }
+  30% {
+    text-shadow: 0 0 12px rgb(224 180 60 / 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ball,
+  .six,
+  .burst,
+  .result > span,
+  .sixResult > span {
+    animation: none;
+  }
+
+  .burst {
+    display: none;
+  }
+}

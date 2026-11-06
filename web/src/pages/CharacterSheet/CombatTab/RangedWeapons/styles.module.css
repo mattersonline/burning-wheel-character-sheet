@@ -1,0 +1,142 @@
+.section {
+  composes: section from "../MeleeWeapons/styles.module.css";
+  padding-top: 24px;
+  border-top: 1px solid var(--c-e1e6df);
+}
+
+.heading {
+  composes: heading from "../MeleeWeapons/styles.module.css";
+}
+
+.empty {
+  composes: empty from "../MeleeWeapons/styles.module.css";
+}
+
+.list {
+  composes: list from "../MeleeWeapons/styles.module.css";
+}
+
+.weapon {
+  composes: weapon from "../MeleeWeapons/styles.module.css";
+}
+
+.top {
+  composes: top from "../MeleeWeapons/styles.module.css";
+}
+
+.name {
+  composes: name from "../MeleeWeapons/styles.module.css";
+}
+
+.damage {
+  composes: damage from "../MeleeWeapons/styles.module.css";
+}
+
+.damageItem {
+  composes: damageItem from "../MeleeWeapons/styles.module.css";
+}
+
+.bottom {
+  composes: bottom from "../MeleeWeapons/styles.module.css";
+}
+
+.row {
+  composes: row from "../MeleeWeapons/styles.module.css";
+}
+
+.field {
+  composes: field from "../MeleeWeapons/styles.module.css";
+}
+
+.label {
+  composes: label from "../MeleeWeapons/styles.module.css";
+}
+
+.length {
+  composes: length from "../MeleeWeapons/styles.module.css";
+}
+
+.lengthField {
+  composes: lengthField from "../MeleeWeapons/styles.module.css";
+}
+
+.dof {
+  color: var(--c-788176);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.kindName {
+  display: flex;
+  height: 40px;
+  padding-left: 4px;
+  align-items: center;
+  font-weight: 600;
+}
+
+.adds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.faces {
+  display: flex;
+  gap: 6px;
+}
+
+.face {
+  display: grid;
+  width: 40px;
+  min-height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--c-c8d3c8);
+  border-radius: 8px;
+  color: var(--c-20392e);
+  background: var(--c-ffffff);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.1;
+  cursor: pointer;
+}
+
+.face span {
+  color: var(--c-788176);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.face[data-level="M"] {
+  background: var(--c-e8efe4);
+}
+
+.face[data-level="S"] {
+  color: var(--c-ffffff);
+  background: var(--c-2f5543);
+}
+
+.face[data-level="S"] span {
+  color: var(--c-cfe0d4);
+}
+
+.damageInput {
+  width: 44px;
+  height: 22px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--c-c8d3c8);
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: center;
+  appearance: textfield;
+}
+
+.damageInput::-webkit-inner-spin-button,
+.damageInput::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}

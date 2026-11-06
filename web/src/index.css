@@ -1,0 +1,60 @@
+:root {
+  font-family: "Aptos", "Segoe UI", sans-serif;
+  color: var(--c-34443a);
+  background: var(--c-f3f5f0);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  scrollbar-gutter: stable;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, var(--page-glow), transparent 38%), var(--c-f3f5f0);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+@media (hover: hover) {
+  button:not(:disabled):not(:focus-visible):hover {
+    outline: 2px solid var(--c-a55338);
+    outline-offset: -2px;
+  }
+}
+
+::selection {
+  color: var(--c-ffffff);
+  background: var(--c-557a61);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--c-a55338);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

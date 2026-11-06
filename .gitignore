@@ -1,0 +1,15 @@
+# Node
+web/node_modules/
+web/dist/
+web/*.local
+
+# Go
+api/data/characters.db
+api/data/characters.json
+api/*.test
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

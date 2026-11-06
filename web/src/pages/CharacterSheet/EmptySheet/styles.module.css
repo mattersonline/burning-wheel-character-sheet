@@ -1,0 +1,37 @@
+.emptySheet {
+  display: flex;
+  min-height: 65vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 57px;
+  height: 57px;
+  margin-bottom: 22px;
+  border-radius: 50%;
+  color: var(--c-f5f2e9);
+  background: var(--c-244b3b);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.emptySheet h2 {
+  margin: 5px 0 10px;
+  color: var(--c-243b30);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.17;
+}
+
+.lead {
+  margin: 0 0 20px;
+  color: var(--c-778075);
+  font-size: 13px;
+}

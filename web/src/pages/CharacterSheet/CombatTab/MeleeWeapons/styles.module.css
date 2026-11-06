@@ -1,0 +1,128 @@
+.section {
+  margin-top: 28px;
+}
+
+.heading {
+  margin: 0 0 12px;
+  color: var(--c-304337);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.empty {
+  margin: 0 0 4px;
+  color: var(--c-788176);
+  font-size: 12px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));
+  gap: 10px;
+}
+
+.weapon {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 10px 12px 6px;
+  border: 1px solid var(--c-e1e6df);
+  border-radius: 6px;
+  background: var(--c-ffffff);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.name {
+  min-width: 140px;
+  min-height: 44px;
+  flex: 1;
+  padding: 0 4px;
+  border: 0;
+  border-bottom: 1px solid var(--c-dfe5dc);
+  border-radius: 0;
+  outline: 0;
+  color: var(--c-20392e);
+  background: transparent;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+}
+
+.damage {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+}
+
+.damageItem {
+  display: grid;
+  min-width: 40px;
+  justify-items: center;
+  padding: 3px 6px;
+  border-radius: 6px;
+  background: var(--c-eef3ec);
+}
+
+.damageItem dt {
+  color: var(--c-5e6c60);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.damageItem dd {
+  margin: 0;
+  color: var(--c-20392e);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  column-gap: 12px;
+  row-gap: 8px;
+}
+
+.field {
+  display: grid;
+  gap: 1px;
+}
+
+.label {
+  padding-left: 4px;
+  color: var(--c-5e6c60);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.length {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 8px;
+  border: 1px solid var(--c-dfe5dc);
+  border-radius: 6px;
+  color: var(--c-20392e);
+  background: var(--c-ffffff);
+  font: inherit;
+  font-size: 14px;
+}
+
+.lengthField {
+  min-width: 100px;
+  flex: 1;
+}

@@ -1,0 +1,72 @@
+.section {
+  composes: section from "../MeleeWeapons/styles.module.css";
+}
+
+.heading {
+  composes: heading from "../MeleeWeapons/styles.module.css";
+}
+
+.field {
+  composes: field from "../MeleeWeapons/styles.module.css";
+}
+
+.label {
+  composes: label from "../MeleeWeapons/styles.module.css";
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));
+  gap: 12px;
+}
+
+.piece {
+  display: grid;
+  grid-template-columns: 236px minmax(0, 1fr);
+  align-items: end;
+  gap: 16px;
+  padding: 10px 14px;
+  border: 1px solid var(--c-e1e8df);
+  border-radius: 8px;
+  background: var(--c-ffffff);
+}
+
+.type {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 2px;
+}
+
+.input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--c-c8d3c8);
+  border-radius: 8px;
+  color: var(--c-20392e);
+  background: var(--c-ffffff);
+  font: inherit;
+}
+
+.subheading {
+  margin: 24px 0 2px;
+  color: var(--c-304337);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.note {
+  margin: 0 0 10px;
+  color: var(--c-788176);
+  font-size: 12px;
+}
+
+.clumsy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 20px;
+}

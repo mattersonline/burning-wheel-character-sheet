@@ -1,0 +1,45 @@
+.field {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  min-width: 0;
+}
+
+.field > span {
+  color: var(--c-5e6c60);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 9px;
+  border: 1px solid var(--c-e0e5de);
+  border-radius: 2px;
+  outline: 0;
+  color: var(--c-2c3b31);
+  background: var(--c-fbfcfa);
+  font: inherit;
+  font-size: 12px;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--c-71917a);
+  background: var(--c-ffffff);
+  box-shadow: 0 0 0 2px rgb(83 128 97 / 10%);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--c-a3aaa1);
+}
+
+.field textarea {
+  min-height: 82px;
+  resize: vertical;
+  line-height: 1.55;
+}
