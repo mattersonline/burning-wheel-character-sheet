@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import DiceIcon from '../DiceIcon/DiceIcon'
+import DiceIcon from '@/components/DiceIcon'
 import styles from './styles.module.css'
 
 type DiceButtonProps = {

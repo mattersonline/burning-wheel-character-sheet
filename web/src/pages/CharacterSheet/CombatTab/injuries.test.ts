@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest'
-import type { Ability } from '../../../api/characters'
+import type { Ability } from '@/api/characters'
 import {
   calculateInjuryThresholds,
   calculateWoundPenalty,
   injuryColumnFor,
   setWounds,
-} from './injuries'
+} from '@/pages/CharacterSheet/CombatTab/injuries'
 
 const stats = (forte: number, power: number) =>
   [

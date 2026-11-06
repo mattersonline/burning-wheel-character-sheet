@@ -1,6 +1,6 @@
-import Eyebrow from '../../../../components/Eyebrow/Eyebrow'
-import Field from '../../../../components/Field/Field'
-import type { SheetTabProps } from '../../types'
+import Eyebrow from '@/components/Eyebrow'
+import Field from '@/components/Field'
+import type { SheetTabProps } from '@/pages/CharacterSheet/types'
 import styles from './styles.module.css'
 
 const IdentitySection = ({ character, updateField }: SheetTabProps) => (

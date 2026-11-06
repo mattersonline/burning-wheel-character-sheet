@@ -1,8 +1,8 @@
 import { useLayoutEffect, useRef } from 'react'
-import type { Shade } from '../../../api/characters'
-import Die, { dieRollDuration } from './Die/Die'
-import type { RolledDie } from './dicePool'
-import { isSuccessFace } from './rules'
+import type { Shade } from '@/api/characters'
+import Die, { dieRollDuration } from '@/components/AbilityRecord/CheckModal/Die'
+import type { RolledDie } from '@/components/AbilityRecord/CheckModal/dicePool'
+import { isSuccessFace } from '@/components/AbilityRecord/CheckModal/rules'
 import styles from './styles.module.css'
 
 type DiceRowProps = {

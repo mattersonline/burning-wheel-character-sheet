@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import type { Ability, Artha } from '../../../../api/characters'
-import { newAbility } from '../../../../api/characters'
-import CheckModal from '../../../../components/AbilityRecord/CheckModal/CheckModal'
-import type { WoundPenalty } from '../../../../components/AbilityRecord/CheckModal/rules'
-import DiceButton from '../../../../components/DiceButton/DiceButton'
-import { calculateDerivedStats } from './derived'
+import type { Ability, Artha } from '@/api/characters'
+import { newAbility } from '@/api/characters'
+import CheckModal from '@/components/AbilityRecord/CheckModal'
+import type { WoundPenalty } from '@/components/AbilityRecord/CheckModal/rules'
+import DiceButton from '@/components/DiceButton'
+import { calculateDerivedStats } from '@/pages/CharacterSheet/AttributesTab/DerivedStats/derived'
 import styles from './styles.module.css'
 
 type DerivedStatsProps = {

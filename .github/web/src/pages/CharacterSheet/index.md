@@ -7,12 +7,13 @@ The roster (`Roster/`, with a trash button per character; a « / » toggle colla
 | [CombatTab/](CombatTab/index.md) | Injury grid and wound penalties. |
 | [SkillsTab/](SkillsTab/index.md) | Skills and skills being learned. |
 | [AttributesTab/](AttributesTab/index.md) | Stats, attributes and calculated stats. |
+| [InventoryTab/](InventoryTab/index.md) | Inventory items with name, description and quantity. |
 
 Other folders (`CharacterSummary/`, `ArthaSummary/`, and the information, artha and notes tabs) have no extra documentation.
 
 ## Tabs
 
-Character information, Combat, Stats / Attributes, Skills, Artha, and Notes / Spells / Other.
+Character information, Relationships, Inventory / Gear, Combat, Stats / Attributes, Skills, Artha, and Notes / Spells / Other.
 
 React Router's `BrowserRouter` wraps the app. `CharacterSheetPage` uses `useSearchParams`
 to keep `?character=<id>&tab=<tab-id>` as the selection source, so refresh, shared links,
@@ -24,7 +25,9 @@ the outgoing draft, including browser history navigation. Creation selects the n
 character's Information tab; deleting the selected character selects the next available
 character (or removes the character parameter for an empty roster).
 
-- The information tab has three belief slots, one special belief, three instinct slots, and separate character, die and call-on traits.
+- The information tab has three belief slots, one special belief, three instinct slots, and separate character, die and call-on trait grids with name and description columns.
+- `RelationshipsTab.tsx` edits `sheetData.relationships` as a grid with type, name and description. Types are Relationships, Circles, Named Circles, Enemy Circles, Reputations and Affiliations. These are relationship categories; the Circles ability remains unchanged.
+- Inventory, relationships and traits reuse [RecordGrid](../../components/RecordGrid/index.md) with equal-height, tablet-friendly cells. Existing free-text traits and relationships migrate into one imported row per field without losing text. Additions, edits and confirmed removals use existing autosave.
 - The Artha tab edits `sheetData.arthaPool` (available fate, persona and deed points, reusing the `Artha` type). Labels live in `artha.ts`.
 
 ## Header

@@ -1,5 +1,5 @@
-import Button from '../../../components/Button/Button'
-import Eyebrow from '../../../components/Eyebrow/Eyebrow'
+import Button from '@/components/Button'
+import Eyebrow from '@/components/Eyebrow'
 import styles from './styles.module.css'
 
 type EmptySheetProps = {

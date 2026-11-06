@@ -150,6 +150,7 @@ func (s *SQLiteStore) Create(character Character) (Character, error) {
 	}
 	character.ID = id
 	character.UpdatedAt = time.Now().UTC()
+	migrateLegacyFields(&character)
 	normalizeSheetData(&character.SheetData)
 	if err := insertCharacter(s.db, character); err != nil {
 		return Character{}, err
@@ -160,6 +161,7 @@ func (s *SQLiteStore) Create(character Character) (Character, error) {
 func (s *SQLiteStore) Update(id string, character Character) (Character, error) {
 	character.ID = id
 	character.UpdatedAt = time.Now().UTC()
+	migrateLegacyFields(&character)
 	normalizeSheetData(&character.SheetData)
 	sheetData, err := marshalSheetData(character.SheetData)
 	if err != nil {
@@ -267,6 +269,8 @@ func marshalSheetData(sheetData SheetData) (string, error) {
 func normalizeSheetData(sheetData *SheetData) {
 	sheetData.Beliefs = normalizeSlots(sheetData.Beliefs)
 	sheetData.Instincts = normalizeSlots(sheetData.Instincts)
+	sheetData.Inventory = normalizeInventory(sheetData.Inventory)
+	normalizeRecordLists(sheetData)
 	normalizeStatsAndAttributes(sheetData)
 	sheetData.SkillRecords = normalizeAbilities(sheetData.SkillRecords)
 	sheetData.LearningSkills = normalizeLearningSkills(sheetData.LearningSkills)
@@ -314,8 +318,10 @@ func migrateLegacyFields(character *Character) {
 	if character.SheetData.Instincts == nil && character.Instincts != "" {
 		character.SheetData.Instincts = []string{character.Instincts}
 	}
-	if character.SheetData.CharacterTraits == "" {
-		character.SheetData.CharacterTraits = character.Traits
+	if character.SheetData.CharacterTraits == nil && character.Traits != "" {
+		character.SheetData.CharacterTraits = NamedRecords{{
+			ID: "legacy-traits", Name: "Imported traits", Description: character.Traits,
+		}}
 	}
 }
 

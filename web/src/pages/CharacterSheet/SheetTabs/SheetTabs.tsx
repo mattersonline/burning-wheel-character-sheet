@@ -1,12 +1,14 @@
 import type { KeyboardEvent } from 'react'
-import ArthaTab from '../ArthaTab/ArthaTab'
-import AttributesTab from '../AttributesTab/AttributesTab'
-import CombatTab from '../CombatTab/CombatTab'
-import InformationTab from '../InformationTab/InformationTab'
-import NotesTab from '../NotesTab/NotesTab'
-import SkillsTab from '../SkillsTab/SkillsTab'
-import { type TabId, tabs } from '../tabs'
-import type { SheetTabProps } from '../types'
+import ArthaTab from '@/pages/CharacterSheet/ArthaTab'
+import AttributesTab from '@/pages/CharacterSheet/AttributesTab'
+import CombatTab from '@/pages/CharacterSheet/CombatTab'
+import InformationTab from '@/pages/CharacterSheet/InformationTab'
+import InventoryTab from '@/pages/CharacterSheet/InventoryTab'
+import NotesTab from '@/pages/CharacterSheet/NotesTab'
+import RelationshipsTab from '@/pages/CharacterSheet/RelationshipsTab'
+import SkillsTab from '@/pages/CharacterSheet/SkillsTab'
+import { type TabId, tabs } from '@/pages/CharacterSheet/tabs'
+import type { SheetTabProps } from '@/pages/CharacterSheet/types'
 import styles from './styles.module.css'
 
 type SheetTabsProps = SheetTabProps & {
@@ -66,6 +68,8 @@ const SheetTabs = ({
         aria-labelledby={`tab-${activeTab}`}
       >
         {activeTab === 'information' && <InformationTab {...tabProps} />}
+        {activeTab === 'relationships' && <RelationshipsTab {...tabProps} />}
+        {activeTab === 'inventory' && <InventoryTab {...tabProps} />}
         {activeTab === 'combat' && <CombatTab {...tabProps} />}
         {activeTab === 'attributes' && (
           <AttributesTab {...tabProps} checkId={checkId} onCheckOpened={onCheckOpened} />

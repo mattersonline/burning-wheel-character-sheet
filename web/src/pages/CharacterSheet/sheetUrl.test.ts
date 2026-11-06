@@ -1,8 +1,19 @@
 import { describe, expect, it } from 'vitest'
-import { readSheetUrl, writeSheetUrl } from './sheetUrl'
-import { tabs } from './tabs'
+import { readSheetUrl, writeSheetUrl } from '@/pages/CharacterSheet/sheetUrl'
+import { tabs } from '@/pages/CharacterSheet/tabs'
 
 describe('sheet URL', () => {
+  it.each(['relationships', 'inventory'] as const)('round-trips the %s tab URL', (tab) => {
+    const params = writeSheetUrl(new URLSearchParams(), 'first', tab)
+    expect(params.get('tab')).toBe(tab)
+    expect(readSheetUrl(params, ['first'])).toEqual({
+      characterId: 'first',
+      tab,
+      invalidCharacter: false,
+      invalidTab: false,
+    })
+  })
+
   it('restores the requested character and every supported tab', () => {
     for (const { id } of tabs) {
       expect(

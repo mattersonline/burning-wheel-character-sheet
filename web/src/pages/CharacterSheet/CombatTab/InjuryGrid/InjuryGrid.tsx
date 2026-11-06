@@ -1,4 +1,4 @@
-import type { Ability } from '../../../../api/characters'
+import type { Ability } from '@/api/characters'
 import {
   calculateInjuryThresholds,
   injuryColumnFor,
@@ -6,7 +6,7 @@ import {
   injuryRows,
   maxWoundsPerLevel,
   setWounds,
-} from '../injuries'
+} from '@/pages/CharacterSheet/CombatTab/injuries'
 import styles from './styles.module.css'
 
 type InjuryGridProps = {

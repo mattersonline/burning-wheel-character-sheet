@@ -1,5 +1,5 @@
-import SectionHeading from '../../../../components/SectionHeading/SectionHeading'
-import TextField from '../../../../components/TextField/TextField'
+import SectionHeading from '@/components/SectionHeading'
+import TextField from '@/components/TextField'
 import styles from './styles.module.css'
 
 type Slot = { id: string; label: string }

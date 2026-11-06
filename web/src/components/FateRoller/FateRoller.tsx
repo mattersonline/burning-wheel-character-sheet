@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { rollDie } from '../AbilityRecord/CheckModal/rules'
+import { rollDie } from '@/components/AbilityRecord/CheckModal/rules'
 import styles from './styles.module.css'
 
 const CrystalBallIcon = () => (

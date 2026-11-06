@@ -1,16 +1,16 @@
 import { useState } from 'react'
-import type { Ability, Artha, LearningSkill } from '../../../../api/characters'
-import { newAbility, statSlots } from '../../../../api/characters'
-import BubbleTrack from '../../../../components/AbilityRecord/BubbleTrack/BubbleTrack'
-import CheckModal from '../../../../components/AbilityRecord/CheckModal/CheckModal'
+import type { Ability, Artha, LearningSkill } from '@/api/characters'
+import { newAbility, statSlots } from '@/api/characters'
+import BubbleTrack from '@/components/AbilityRecord/BubbleTrack'
+import CheckModal from '@/components/AbilityRecord/CheckModal'
 import {
   type AdvancementKind,
   learningAptitude,
   type WoundPenalty,
-} from '../../../../components/AbilityRecord/CheckModal/rules'
-import Button from '../../../../components/Button/Button'
-import DiceButton from '../../../../components/DiceButton/DiceButton'
-import RemoveButton from '../../../../components/RemoveButton/RemoveButton'
+} from '@/components/AbilityRecord/CheckModal/rules'
+import Button from '@/components/Button'
+import DiceButton from '@/components/DiceButton'
+import RemoveButton from '@/components/RemoveButton'
 import styles from './styles.module.css'
 
 type LearningSkillRowProps = {

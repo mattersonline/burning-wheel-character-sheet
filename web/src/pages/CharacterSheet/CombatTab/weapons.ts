@@ -1,4 +1,4 @@
-import type { MeleeWeapon, RangedWeapon } from '../../../api/characters'
+import type { MeleeWeapon, RangedWeapon } from '@/api/characters'
 
 export type MeleeDamage = { incidental: number; mark: number; superb: number }
 

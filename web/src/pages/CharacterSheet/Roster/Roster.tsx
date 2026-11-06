@@ -1,6 +1,6 @@
-import type { Character } from '../../../api/characters'
-import Button from '../../../components/Button/Button'
-import Eyebrow from '../../../components/Eyebrow/Eyebrow'
+import type { Character } from '@/api/characters'
+import Button from '@/components/Button'
+import Eyebrow from '@/components/Eyebrow'
 import styles from './styles.module.css'
 
 type RosterProps = {

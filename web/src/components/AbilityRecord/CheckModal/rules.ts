@@ -1,4 +1,4 @@
-import type { Advancement, Artha, Shade } from '../../../api/characters'
+import type { Advancement, Artha, Shade } from '@/api/characters'
 
 // Lowest die face that counts as a success for each shade.
 export const successThreshold: Record<Shade, number> = { black: 4, grey: 3, white: 2 }

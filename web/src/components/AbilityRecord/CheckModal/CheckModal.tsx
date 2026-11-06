@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import type { Ability, Artha } from '../../../api/characters'
-import Button from '../../Button/Button'
-import Stepper from '../Stepper/Stepper'
-import Confetti from './Confetti/Confetti'
-import DiceRow from './DiceRow'
+import type { Ability, Artha } from '@/api/characters'
+import Confetti from '@/components/AbilityRecord/CheckModal/Confetti'
+import DiceRow from '@/components/AbilityRecord/CheckModal/DiceRow'
 import {
   type AdvancementKind,
   calculateObstacle,
@@ -15,9 +13,11 @@ import {
   recordAdvancement,
   successThreshold,
   type WoundPenalty,
-} from './rules'
+} from '@/components/AbilityRecord/CheckModal/rules'
+import { useDicePool } from '@/components/AbilityRecord/CheckModal/useDicePool'
+import Stepper from '@/components/AbilityRecord/Stepper'
+import Button from '@/components/Button'
 import styles from './styles.module.css'
-import { useDicePool } from './useDicePool'
 
 type CheckModalProps = {
   ability: Ability

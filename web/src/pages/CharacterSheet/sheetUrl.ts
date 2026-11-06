@@ -1,4 +1,4 @@
-import { type TabId, tabs } from './tabs'
+import { type TabId, tabs } from '@/pages/CharacterSheet/tabs'
 
 export const readSheetUrl = (params: URLSearchParams, characterIds: readonly string[]) => {
   const requestedCharacter = params.get('character')

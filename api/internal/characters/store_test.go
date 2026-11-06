@@ -21,12 +21,15 @@ func TestSQLiteStorePersistsCRUD(t *testing.T) {
 		Beliefs:         []string{"Protect the village", "Find my family", "Expose the traitor"},
 		SpecialBelief:   "The old ways must endure",
 		Instincts:       []string{"Draw first", "Never travel alone", "Hide the map"},
-		CharacterTraits: "Patient",
-		DieTraits:       "Keen Sight",
-		CallOnTraits:    "Clever",
-		Relationships:   "Allied with the scouts",
-		Inventory:       "Map and lantern",
-		Injuries:        "Old scar",
+		CharacterTraits: NamedRecords{{ID: "patient", Name: "Patient", Description: "Waits calmly"}},
+		DieTraits:       NamedRecords{{ID: "keen", Name: "Keen Sight", Description: "Sharp eyes"}},
+		CallOnTraits:    NamedRecords{{ID: "clever", Name: "Clever", Description: "Quick thinking"}},
+		Relationships:   Relationships{{ID: "scouts", Name: "Scouts", Description: "Allied with the scouts", Type: RelationshipAffiliation}},
+		Inventory: Inventory{
+			{ID: "map", Name: "Map", Description: "A map of the forest", Quantity: 1},
+			{ID: "lantern", Name: "Lantern", Description: "Oil lantern", Quantity: 2},
+		},
+		Injuries: "Old scar",
 		Stats: []Ability{{
 			ID: "will", Name: "Will", Exponent: 4, Shade: ShadeGrey, SkipRoutine: true,
 			Advancement: Advancement{Difficult: 1},
@@ -148,7 +151,9 @@ func TestSQLiteStoreMigratesExistingCharacterTable(t *testing.T) {
 	}
 	if !reflect.DeepEqual(got[0].SheetData.Beliefs, []string{"Belief", "", ""}) ||
 		!reflect.DeepEqual(got[0].SheetData.Instincts, []string{"Instinct", "", ""}) ||
-		got[0].SheetData.CharacterTraits != "Trait" {
+		!reflect.DeepEqual(got[0].SheetData.CharacterTraits, NamedRecords{{
+			ID: "legacy-traits", Name: "Imported traits", Description: "Trait",
+		}}) {
 		t.Fatalf("legacy character fields were not migrated: %#v", got[0].SheetData)
 	}
 }
@@ -158,7 +163,7 @@ func TestSQLiteStoreImportsLegacyJSON(t *testing.T) {
 	databasePath := filepath.Join(directory, "characters.db")
 	legacyPath := filepath.Join(directory, "characters.json")
 	legacyData := `[
-		{"id":"newer-id","name":"Mara","updatedAt":"2026-01-02T03:04:05Z"},
+		{"id":"newer-id","name":"Mara","sheetData":{"inventory":"Map and lantern","characterTraits":"Patient","dieTraits":"Keen Sight","callOnTraits":"Clever","relationships":"An old friend"},"updatedAt":"2026-01-02T03:04:05Z"},
 		{"id":"older-id","name":"Bram","updatedAt":"2026-01-01T03:04:05Z"}
 	]`
 	if err := os.WriteFile(legacyPath, []byte(legacyData), 0o600); err != nil {
@@ -194,6 +199,19 @@ func TestSQLiteStoreImportsLegacyJSON(t *testing.T) {
 	}
 	if len(characters) != 2 || characters[0].ID != "newer-id" || characters[1].ID != "older-id" {
 		t.Fatalf("characters after reopening = %#v", characters)
+	}
+	wantInventory := Inventory{{
+		ID: "legacy-inventory", Name: "Imported inventory", Description: "Map and lantern", Quantity: 1,
+	}}
+	if !reflect.DeepEqual(characters[0].SheetData.Inventory, wantInventory) {
+		t.Fatalf("imported inventory = %#v, want %#v", characters[0].SheetData.Inventory, wantInventory)
+	}
+	sheet := characters[0].SheetData
+	if len(sheet.CharacterTraits) != 1 || sheet.CharacterTraits[0].Description != "Patient" ||
+		len(sheet.DieTraits) != 1 || sheet.DieTraits[0].Description != "Keen Sight" ||
+		len(sheet.CallOnTraits) != 1 || sheet.CallOnTraits[0].Description != "Clever" ||
+		len(sheet.Relationships) != 1 || sheet.Relationships[0].Description != "An old friend" {
+		t.Fatalf("imported record lists = %#v", sheet)
 	}
 }
 

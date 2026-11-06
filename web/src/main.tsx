@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './theme.css'
 import './index.css'
-import CharacterSheetPage from './pages/CharacterSheet/CharacterSheetPage'
+import CharacterSheetPage from '@/pages/CharacterSheet/CharacterSheetPage'
 
 const queryClient = new QueryClient()
 

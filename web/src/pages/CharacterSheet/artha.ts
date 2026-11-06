@@ -1,4 +1,4 @@
-import type { Artha } from '../../api/characters'
+import type { Artha } from '@/api/characters'
 
 export const arthaKinds: { key: keyof Artha; label: string; hint: string }[] = [
   { key: 'fate', label: 'Fate', hint: 'Reroll a six, or open-ended rolls.' },

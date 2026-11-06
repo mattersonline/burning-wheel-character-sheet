@@ -1,5 +1,5 @@
-import { apiClient } from '../client'
-import type { Character, CharacterFields } from './types'
+import type { Character, CharacterFields } from '@/api/characters/types'
+import { apiClient } from '@/api/client'
 
 export const fetchCharacters = async () =>
   (await apiClient.get<Character[]>('/api/characters')).data

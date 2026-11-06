@@ -1,8 +1,8 @@
-import Stepper from '../../../components/AbilityRecord/Stepper/Stepper'
-import SectionHeading from '../../../components/SectionHeading/SectionHeading'
-import TabIntro from '../../../components/TabIntro/TabIntro'
-import { arthaKinds } from '../artha'
-import type { SheetTabProps } from '../types'
+import Stepper from '@/components/AbilityRecord/Stepper'
+import SectionHeading from '@/components/SectionHeading'
+import TabIntro from '@/components/TabIntro'
+import { arthaKinds } from '@/pages/CharacterSheet/artha'
+import type { SheetTabProps } from '@/pages/CharacterSheet/types'
 import styles from './styles.module.css'
 
 const ArthaTab = ({ character, updateSheetData }: SheetTabProps) => {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { resolveTheme } from './useTheme'
+import { resolveTheme } from '@/components/ThemeToggle/useTheme'
 
 describe('resolveTheme', () => {
   it('follows the system setting until a choice is stored', () => {

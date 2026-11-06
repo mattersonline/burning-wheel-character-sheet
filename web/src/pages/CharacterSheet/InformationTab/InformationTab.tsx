@@ -1,10 +1,7 @@
-import SectionHeading from '../../../components/SectionHeading/SectionHeading'
-import TextField from '../../../components/TextField/TextField'
-import type { SheetTabProps } from '../types'
-import IdentitySection from './IdentitySection/IdentitySection'
-import SlotsSection from './SlotsSection/SlotsSection'
-import styles from './styles.module.css'
-import TraitsSection from './TraitsSection/TraitsSection'
+import IdentitySection from '@/pages/CharacterSheet/InformationTab/IdentitySection'
+import SlotsSection from '@/pages/CharacterSheet/InformationTab/SlotsSection'
+import TraitsSection from '@/pages/CharacterSheet/InformationTab/TraitsSection'
+import type { SheetTabProps } from '@/pages/CharacterSheet/types'
 
 const beliefSlots = [
   { id: 'belief-1', label: 'Belief 1' },
@@ -57,22 +54,6 @@ const InformationTab = (props: SheetTabProps) => {
       />
 
       <TraitsSection {...props} />
-
-      <SectionHeading number="04" title="Relationships & inventory" />
-      <div className={styles.writingGrid}>
-        <TextField
-          label="Relationships"
-          value={sheetData.relationships}
-          onChange={(value) => updateSheetData('relationships', value)}
-          placeholder="Important people, connections, and obligations"
-        />
-        <TextField
-          label="Inventory"
-          value={sheetData.inventory}
-          onChange={(value) => updateSheetData('inventory', value)}
-          placeholder="Possessions and carried gear"
-        />
-      </div>
     </>
   )
 }

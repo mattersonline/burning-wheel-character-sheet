@@ -23,15 +23,15 @@ type Character struct {
 }
 
 type SheetData struct {
-	Beliefs         []string `json:"beliefs"`
-	SpecialBelief   string   `json:"specialBelief"`
-	Instincts       []string `json:"instincts"`
-	CharacterTraits string   `json:"characterTraits"`
-	DieTraits       string   `json:"dieTraits"`
-	CallOnTraits    string   `json:"callOnTraits"`
-	Relationships   string   `json:"relationships"`
-	Inventory       string   `json:"inventory"`
-	Injuries        string   `json:"injuries"`
+	Beliefs         []string      `json:"beliefs"`
+	SpecialBelief   string        `json:"specialBelief"`
+	Instincts       []string      `json:"instincts"`
+	CharacterTraits NamedRecords  `json:"characterTraits"`
+	DieTraits       NamedRecords  `json:"dieTraits"`
+	CallOnTraits    NamedRecords  `json:"callOnTraits"`
+	Relationships   Relationships `json:"relationships"`
+	Inventory       Inventory     `json:"inventory"`
+	Injuries        string        `json:"injuries"`
 	// InjuryWounds holds the wounds taken (0-3) at each B level, B1 first.
 	InjuryWounds []int     `json:"injuryWounds"`
 	Stats        []Ability `json:"stats"`

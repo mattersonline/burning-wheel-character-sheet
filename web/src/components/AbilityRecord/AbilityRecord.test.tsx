@@ -1,7 +1,7 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
-import type { Ability } from '../../api/characters'
-import AbilityRecord from './AbilityRecord'
+import type { Ability } from '@/api/characters'
+import AbilityRecord from '@/components/AbilityRecord/AbilityRecord'
 
 const ability: Ability = {
   id: 'sword',

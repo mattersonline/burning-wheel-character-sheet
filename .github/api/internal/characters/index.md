@@ -17,6 +17,11 @@ Every character has six fixed `stats` (Will, Power, Agility, Perception, Forte, 
 
 ## Other sheet data
 
+- `characterTraits`, `dieTraits`, and `callOnTraits` are `NamedRecords` arrays with `id`, `name` and `description`. `relationships` is a `Relationships` array with the same fields plus `type` (`relationship`, `circles`, `namedCircles`, `enemyCircles`, `reputation`, `affiliation`). These categories do not change the fixed Circles ability.
+- `records.go` shares the legacy-text decoder with inventory: old strings are preserved verbatim in one imported record's description. Missing/null/empty data becomes `[]`; explicit empty trait arrays never repopulate from the old top-level `traits` field. Missing relationship types default to `relationship`; unknown types produce a JSON decoding error.
+
+- `inventory`: an array of `InventoryItem` records (`inventory.go`), with `id`, `name`, `description` and integer `quantity`. Negative quantities normalize to zero; empty lists serialize as `[]`. Its JSON decoder migrates the old inventory text into one "Imported inventory" item's description (quantity 1), preserving the text exactly. Migration works when reading SQLite or importing legacy JSON, and subsequent saves write the array format.
+
 - `injuryWounds`: 16 counts of 0-3 (B1 first), clamped by `normalizeInjuryWounds`. See the web [Combat tab](../../../web/src/pages/CharacterSheet/CombatTab/index.md).
 - `arthaPool`: available fate, persona and deed points. The per-ability `artha` fields record what was spent.
 - `learningSkills`: skills being learned (id, name, stat ID, aptitude, tests). `normalizeLearningSkills` keeps aptitude 1-10 and tests no higher than aptitude. `LearningSkill.UnmarshalJSON` still accepts the earlier format where aptitude was text. See the web [Skills tab](../../../web/src/pages/CharacterSheet/SkillsTab/index.md).

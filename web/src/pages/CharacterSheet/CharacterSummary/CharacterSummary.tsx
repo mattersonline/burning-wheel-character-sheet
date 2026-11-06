@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
-import type { Ability, Character } from '../../../api/characters'
-import FateRoller from '../../../components/FateRoller/FateRoller'
+import type { Ability, Character } from '@/api/characters'
+import FateRoller from '@/components/FateRoller'
 import styles from './styles.module.css'
 
 const AbilityBlock = ({

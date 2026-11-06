@@ -1,4 +1,4 @@
-import type { Character, CharacterFields, SheetData } from '../../api/characters'
+import type { Character, CharacterFields, SheetData } from '@/api/characters'
 
 export type SheetTabProps = {
   character: Character

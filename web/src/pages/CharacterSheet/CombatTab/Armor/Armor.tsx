@@ -1,7 +1,7 @@
-import type { Armor as ArmorData } from '../../../../api/characters'
-import { armorLocations, clumsyWeightSkills } from '../../../../api/characters'
-import BubbleTrack from '../../../../components/AbilityRecord/BubbleTrack/BubbleTrack'
-import Stepper from '../../../../components/AbilityRecord/Stepper/Stepper'
+import type { Armor as ArmorData } from '@/api/characters'
+import { armorLocations, clumsyWeightSkills } from '@/api/characters'
+import BubbleTrack from '@/components/AbilityRecord/BubbleTrack'
+import Stepper from '@/components/AbilityRecord/Stepper'
 import styles from './styles.module.css'
 
 type ArmorProps = {

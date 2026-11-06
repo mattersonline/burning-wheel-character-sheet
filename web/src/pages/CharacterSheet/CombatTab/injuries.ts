@@ -1,6 +1,6 @@
-import type { Ability } from '../../../api/characters'
-import type { WoundPenalty } from '../../../components/AbilityRecord/CheckModal/rules'
-import { calculateDerivedStats } from '../AttributesTab/DerivedStats/derived'
+import type { Ability } from '@/api/characters'
+import type { WoundPenalty } from '@/components/AbilityRecord/CheckModal/rules'
+import { calculateDerivedStats } from '@/pages/CharacterSheet/AttributesTab/DerivedStats/derived'
 
 export const injuryColumns = [
   { id: 'su', label: 'Su', name: 'Superficial' },

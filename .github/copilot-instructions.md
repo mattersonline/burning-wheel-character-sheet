@@ -6,6 +6,8 @@ This repository is a small full-stack app: React + TypeScript in `web/`, a Go HT
 
 ## Documentation index
 
+Before working on any prompt, read the documentation relevant to its topic. Start with the index below and follow the linked `index.md` files under `.github/` to the affected folders. Read and apply their notes, conventions, behavior requirements, and prior decisions before investigating code, proposing changes, or implementing anything. Re-read the relevant documentation for each new prompt; do not rely solely on earlier context, as notes may have been added or updated.
+
 | Folder | Contents |
 | --- | --- |
 | [api/](api/index.md) | The Go API: server wiring, HTTP transport, the character model and SQLite storage. |
@@ -32,4 +34,5 @@ The gents/ folder holds custom agent definitions.
 - Frontend API code lives in `web/src/api/`: shared axios client in `client.ts`, one subfolder per data object with its types, requests, and React Query hooks. Components use the hooks, not axios directly.
 - When the user comments on code structure or conventions, record it in these instructions or in the index.md of the matching folder under .github/ so future work follows it. Add a new index.md when you add a documented folder, and list it in its parent's index.
 - Add focused tests for behavior changes; do not rely on manual UI checks alone.
-- Local JSON storage is development-only and is not suitable for public multi-user deployment.- Every deletion or removal of user data (characters, skills, any record) must ask for confirmation first. Use `ConfirmDialog` (`RemoveButton` already does); never delete directly or with `window.confirm`.
+- Local JSON storage is development-only and is not suitable for public multi-user deployment.
+- Every deletion or removal of user data must ask for confirmation first. Grid records use `RecordGrid`'s two-tap inline Remove/Confirm button, cleared by other interactions. Other records use `ConfirmDialog` (`RemoveButton` already does); never delete directly or with `window.confirm`.

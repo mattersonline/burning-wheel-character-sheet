@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import type { Ability, Artha } from '../../../../../api/characters'
-import Confetti from '../../../../../components/AbilityRecord/CheckModal/Confetti/Confetti'
-import DiceRow from '../../../../../components/AbilityRecord/CheckModal/DiceRow'
-import Die, { dieRollDuration } from '../../../../../components/AbilityRecord/CheckModal/Die/Die'
+import type { Ability, Artha } from '@/api/characters'
+import Confetti from '@/components/AbilityRecord/CheckModal/Confetti'
+import DiceRow from '@/components/AbilityRecord/CheckModal/DiceRow'
+import Die, { dieRollDuration } from '@/components/AbilityRecord/CheckModal/Die'
 import {
   calculateObstacle,
   calculatePool,
@@ -14,11 +14,10 @@ import {
   rollDie,
   successThreshold,
   type WoundPenalty,
-} from '../../../../../components/AbilityRecord/CheckModal/rules'
-import checkStyles from '../../../../../components/AbilityRecord/CheckModal/styles.module.css'
-import { useDicePool } from '../../../../../components/AbilityRecord/CheckModal/useDicePool'
-import Stepper from '../../../../../components/AbilityRecord/Stepper/Stepper'
-import Button from '../../../../../components/Button/Button'
+} from '@/components/AbilityRecord/CheckModal/rules'
+import { useDicePool } from '@/components/AbilityRecord/CheckModal/useDicePool'
+import Stepper from '@/components/AbilityRecord/Stepper'
+import Button from '@/components/Button'
 import {
   type DamageLevel,
   damageLevels,
@@ -30,7 +29,8 @@ import {
   rangedLevel,
   successesLeft,
   upgradeCost,
-} from '../../weapons'
+} from '@/pages/CharacterSheet/CombatTab/weapons'
+import checkStyles from '../../../../../components/AbilityRecord/CheckModal/styles.module.css'
 import styles from './styles.module.css'
 
 type AttackModalProps = {

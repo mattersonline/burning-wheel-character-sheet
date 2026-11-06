@@ -1,6 +1,6 @@
-import SectionHeading from '../../../components/SectionHeading/SectionHeading'
-import TextField from '../../../components/TextField/TextField'
-import type { SheetTabProps } from '../types'
+import SectionHeading from '@/components/SectionHeading'
+import TextField from '@/components/TextField'
+import type { SheetTabProps } from '@/pages/CharacterSheet/types'
 import styles from './styles.module.css'
 
 const NotesTab = ({ character, updateField, updateSheetData }: SheetTabProps) => (

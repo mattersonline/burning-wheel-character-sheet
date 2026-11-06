@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { newAbility } from '../../../../api/characters'
-import { calculateDerivedStats } from './derived'
+import { newAbility } from '@/api/characters'
+import { calculateDerivedStats } from '@/pages/CharacterSheet/AttributesTab/DerivedStats/derived'
 
 const stat = (id: string, exponent: number) => ({ ...newAbility(), id, exponent })
 

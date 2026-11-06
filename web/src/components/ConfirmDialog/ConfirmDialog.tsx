@@ -19,6 +19,7 @@ const ConfirmDialog = ({
 }: ConfirmDialogProps) => {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const titleId = useId()
+  const messageId = useId()
 
   useEffect(() => {
     const dialog = dialogRef.current
@@ -26,11 +27,20 @@ const ConfirmDialog = ({
   }, [])
 
   return (
-    <dialog className={styles.dialog} ref={dialogRef} aria-labelledby={titleId} onClose={onCancel}>
+    <dialog
+      className={styles.dialog}
+      ref={dialogRef}
+      aria-labelledby={titleId}
+      aria-describedby={messageId}
+      onClose={onCancel}
+    >
+      <div className={styles.eyebrow}>Confirm removal</div>
       <h2 className={styles.title} id={titleId}>
         {title}
       </h2>
-      <p className={styles.message}>{message}</p>
+      <p className={styles.message} id={messageId}>
+        {message}
+      </p>
       <div className={styles.actions}>
         <button className={styles.cancel} type="button" onClick={() => dialogRef.current?.close()}>
           Cancel

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { newRangedWeapon } from '../../../api/characters'
+import { newRangedWeapon } from '@/api/characters'
 import {
   cycleDof,
   dofBonus,
@@ -10,7 +10,7 @@ import {
   rangedLevel,
   successesLeft,
   upgradeCost,
-} from './weapons'
+} from '@/pages/CharacterSheet/CombatTab/weapons'
 
 describe('dofBonus', () => {
   it('adds one for any extra success, then two and three at double and triple', () => {

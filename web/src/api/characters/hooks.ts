@@ -1,6 +1,11 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { createCharacter, deleteCharacter, fetchCharacters, updateCharacter } from './requests'
-import { type Character, emptyCharacter } from './types'
+import {
+  createCharacter,
+  deleteCharacter,
+  fetchCharacters,
+  updateCharacter,
+} from '@/api/characters/requests'
+import { type Character, emptyCharacter } from '@/api/characters/types'
 
 export const charactersQueryKey = ['characters'] as const
 

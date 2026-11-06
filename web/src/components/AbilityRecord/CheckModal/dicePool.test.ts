@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest'
-import { type DicePool, explodeSix, type RolledDie, rerollFailedDie, settleDie } from './dicePool'
-import { countSuccesses } from './rules'
+import {
+  type DicePool,
+  explodeSix,
+  type RolledDie,
+  rerollFailedDie,
+  settleDie,
+} from '@/components/AbilityRecord/CheckModal/dicePool'
+import { countSuccesses } from '@/components/AbilityRecord/CheckModal/rules'
 
 const die = (id: number, value: number): RolledDie => ({ id, value, exploded: false })
 

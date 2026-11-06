@@ -1,11 +1,11 @@
-import SectionHeading from '../../../components/SectionHeading/SectionHeading'
-import TextField from '../../../components/TextField/TextField'
-import type { SheetTabProps } from '../types'
-import Armor from './Armor/Armor'
-import InjuryGrid from './InjuryGrid/InjuryGrid'
-import { calculateWoundPenalty } from './injuries'
-import MeleeWeapons from './MeleeWeapons/MeleeWeapons'
-import RangedWeapons from './RangedWeapons/RangedWeapons'
+import SectionHeading from '@/components/SectionHeading'
+import TextField from '@/components/TextField'
+import Armor from '@/pages/CharacterSheet/CombatTab/Armor'
+import InjuryGrid from '@/pages/CharacterSheet/CombatTab/InjuryGrid'
+import { calculateWoundPenalty } from '@/pages/CharacterSheet/CombatTab/injuries'
+import MeleeWeapons from '@/pages/CharacterSheet/CombatTab/MeleeWeapons'
+import RangedWeapons from '@/pages/CharacterSheet/CombatTab/RangedWeapons'
+import type { SheetTabProps } from '@/pages/CharacterSheet/types'
 
 const CombatTab = ({ character, updateSheetData }: SheetTabProps) => {
   const { sheetData } = character

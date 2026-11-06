@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react'
-import type { Ability, Artha } from '../../api/characters'
-import Button from '../Button/Button'
-import DiceButton from '../DiceButton/DiceButton'
-import RemoveButton from '../RemoveButton/RemoveButton'
-import BubbleTrack from './BubbleTrack/BubbleTrack'
-import CheckModal from './CheckModal/CheckModal'
-import { advancementSlots, epiphanyReady, nextShade, type WoundPenalty } from './CheckModal/rules'
-import ShadeButton from './ShadeButton/ShadeButton'
-import Stepper from './Stepper/Stepper'
+import type { Ability, Artha } from '@/api/characters'
+import BubbleTrack from '@/components/AbilityRecord/BubbleTrack'
+import CheckModal from '@/components/AbilityRecord/CheckModal'
+import {
+  advancementSlots,
+  epiphanyReady,
+  nextShade,
+  type WoundPenalty,
+} from '@/components/AbilityRecord/CheckModal/rules'
+import ShadeButton from '@/components/AbilityRecord/ShadeButton'
+import Stepper from '@/components/AbilityRecord/Stepper'
+import Button from '@/components/Button'
+import DiceButton from '@/components/DiceButton'
+import RemoveButton from '@/components/RemoveButton'
 import styles from './styles.module.css'
 
 type AbilityRecordProps = {

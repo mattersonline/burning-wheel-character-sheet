@@ -1,4 +1,4 @@
-import type { Ability } from '../../../../api/characters'
+import type { Ability } from '@/api/characters'
 
 export type DerivedStats = {
   reflexes: number

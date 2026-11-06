@@ -1,7 +1,13 @@
 import { useRef, useState } from 'react'
-import type { Shade } from '../../../api/characters'
-import { type DicePool, explodeSix, type RolledDie, rerollFailedDie, settleDie } from './dicePool'
-import { rollDie } from './rules'
+import type { Shade } from '@/api/characters'
+import {
+  type DicePool,
+  explodeSix,
+  type RolledDie,
+  rerollFailedDie,
+  settleDie,
+} from '@/components/AbilityRecord/CheckModal/dicePool'
+import { rollDie } from '@/components/AbilityRecord/CheckModal/rules'
 
 export const useDicePool = () => {
   const nextId = useRef(0)

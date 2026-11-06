@@ -1,25 +1,25 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
-import type { Character, CharacterFields, SheetData } from '../../api/characters'
+import type { Character, CharacterFields, SheetData } from '@/api/characters'
 import {
   useCharacters,
   useCreateCharacter,
   useDeleteCharacter,
   useUpdateCharacter,
-} from '../../api/characters'
-import { getErrorMessage } from '../../api/client'
-import ConfirmDialog from '../../components/ConfirmDialog/ConfirmDialog'
-import Eyebrow from '../../components/Eyebrow/Eyebrow'
-import ThemeToggle from '../../components/ThemeToggle/ThemeToggle'
-import ArthaSummary from './ArthaSummary/ArthaSummary'
-import CharacterSummary from './CharacterSummary/CharacterSummary'
-import { calculateWoundPenalty } from './CombatTab/injuries'
-import EmptySheet from './EmptySheet/EmptySheet'
-import Roster from './Roster/Roster'
-import SheetTabs from './SheetTabs/SheetTabs'
-import { readSheetUrl, writeSheetUrl } from './sheetUrl'
+} from '@/api/characters'
+import { getErrorMessage } from '@/api/client'
+import ConfirmDialog from '@/components/ConfirmDialog'
+import Eyebrow from '@/components/Eyebrow'
+import ThemeToggle from '@/components/ThemeToggle'
+import ArthaSummary from '@/pages/CharacterSheet/ArthaSummary'
+import CharacterSummary from '@/pages/CharacterSheet/CharacterSummary'
+import { calculateWoundPenalty } from '@/pages/CharacterSheet/CombatTab/injuries'
+import EmptySheet from '@/pages/CharacterSheet/EmptySheet'
+import Roster from '@/pages/CharacterSheet/Roster'
+import SheetTabs from '@/pages/CharacterSheet/SheetTabs'
+import { readSheetUrl, writeSheetUrl } from '@/pages/CharacterSheet/sheetUrl'
+import type { TabId } from '@/pages/CharacterSheet/tabs'
 import styles from './styles.module.css'
-import type { TabId } from './tabs'
 
 const autosaveDelayMs = 600
 

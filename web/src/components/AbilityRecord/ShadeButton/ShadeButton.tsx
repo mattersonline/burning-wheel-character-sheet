@@ -1,4 +1,4 @@
-import type { Shade } from '../../../api/characters'
+import type { Shade } from '@/api/characters'
 import styles from './styles.module.css'
 
 const order: Shade[] = ['black', 'grey', 'white']

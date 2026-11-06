@@ -208,15 +208,58 @@ export type LearningSkill = {
   checks: number
 }
 
+export type InventoryItem = {
+  id: string
+  name: string
+  description: string
+  quantity: number
+}
+
+export type NamedRecord = {
+  id: string
+  name: string
+  description: string
+}
+
+export const newNamedRecord = (): NamedRecord => ({
+  id: newId(),
+  name: '',
+  description: '',
+})
+
+export const relationshipTypes = [
+  { value: 'relationship', label: 'Relationships' },
+  { value: 'circles', label: 'Circles' },
+  { value: 'namedCircles', label: 'Named Circles' },
+  { value: 'enemyCircles', label: 'Enemy Circles' },
+  { value: 'reputation', label: 'Reputations' },
+  { value: 'affiliation', label: 'Affiliations' },
+] as const
+
+export type RelationshipType = (typeof relationshipTypes)[number]['value']
+export type Relationship = NamedRecord & { type: RelationshipType }
+
+export const newRelationship = (): Relationship => ({
+  ...newNamedRecord(),
+  type: 'relationship',
+})
+
+export const newInventoryItem = (): InventoryItem => ({
+  id: newId(),
+  name: '',
+  description: '',
+  quantity: 1,
+})
+
 export type SheetData = {
   beliefs: string[]
   specialBelief: string
   instincts: string[]
-  characterTraits: string
-  dieTraits: string
-  callOnTraits: string
-  relationships: string
-  inventory: string
+  characterTraits: NamedRecord[]
+  dieTraits: NamedRecord[]
+  callOnTraits: NamedRecord[]
+  relationships: Relationship[]
+  inventory: InventoryItem[]
   injuries: string
   // Wounds taken (0-3) at each B level, B1 first.
   injuryWounds: number[]
@@ -266,11 +309,11 @@ export const emptyCharacter: CharacterFields = {
     beliefs: ['', '', ''],
     specialBelief: '',
     instincts: ['', '', ''],
-    characterTraits: '',
-    dieTraits: '',
-    callOnTraits: '',
-    relationships: '',
-    inventory: '',
+    characterTraits: [],
+    dieTraits: [],
+    callOnTraits: [],
+    relationships: [],
+    inventory: [],
     injuries: '',
     injuryWounds: Array.from({ length: 16 }, () => 0),
     stats: statSlots.map((slot) => fixedAbility(slot, true)),

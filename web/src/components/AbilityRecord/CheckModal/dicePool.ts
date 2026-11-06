@@ -1,5 +1,5 @@
-import type { Shade } from '../../../api/characters'
-import { isSuccessFace } from './rules'
+import type { Shade } from '@/api/characters'
+import { isSuccessFace } from '@/components/AbilityRecord/CheckModal/rules'
 
 export type RolledDie = { id: number; value: number; exploded: boolean }
 export type DicePool = { dice: RolledDie[]; rolling: number[]; fateRerollUsed: boolean }

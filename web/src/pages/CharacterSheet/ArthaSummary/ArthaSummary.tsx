@@ -1,5 +1,5 @@
-import type { Artha } from '../../../api/characters'
-import { arthaKinds } from '../artha'
+import type { Artha } from '@/api/characters'
+import { arthaKinds } from '@/pages/CharacterSheet/artha'
 import styles from './styles.module.css'
 
 const ArthaSummary = ({ pool }: { pool: Artha }) => (

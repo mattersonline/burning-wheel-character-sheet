@@ -5,6 +5,7 @@ Components used in multiple locations. Single-use components stay beside their p
 | Folder | Contents |
 | --- | --- |
 | [AbilityRecord/](AbilityRecord/index.md) | The ability card, its dice roller (`CheckModal/`), bubble track, shade button and stepper. |
+| [RecordGrid/](RecordGrid/index.md) | Shared tablet-friendly spreadsheet-style editor for inventory, relationships and traits. |
 
 Other shared components (`Button`, `Field`, `TextField`, `AddButton`, `RemoveButton`, `SectionHeading`, `TabIntro`, `Eyebrow`) have no extra documentation.
 
@@ -21,3 +22,5 @@ Other shared components (`Button`, `Field`, `TextField`, `AddButton`, `RemoveBut
 `FateRoller/` is a crystal-ball button at the bottom of the header's identity column (far right of the identity row once the stat blocks wrap below it, decided by the header's own width via a container query). Each tap rolls one straight d6 (`rollDie` from `CheckModal/rules`) and shows the number next to the button; a six adds a gold glow, a ring burst and a sparkle on the number. Animations restart on every roll (keyed by roll count) and are disabled under `prefers-reduced-motion`. The result is in an `aria-live` `<output>`. Nothing is stored.
 
 `ConfirmDialog` is a modal confirmation (native `<dialog>`, mounted only while pending). `RemoveButton` confirms through it automatically. The mandate that all deletions confirm lives in the root [copilot-instructions.md](../../../copilot-instructions.md).
+
+Grid records use the two-tap inline confirmation documented in [RecordGrid](RecordGrid/index.md) instead of the modal. The modal remains for other deletions, with a centered theme-aware panel, clear warning heading and 48px Cancel/confirmation actions.

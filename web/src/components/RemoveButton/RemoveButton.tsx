@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ConfirmDialog from '../ConfirmDialog/ConfirmDialog'
+import ConfirmDialog from '@/components/ConfirmDialog'
 import styles from './styles.module.css'
 
 type RemoveButtonProps = {

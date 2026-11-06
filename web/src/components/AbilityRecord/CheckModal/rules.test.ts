@@ -11,7 +11,7 @@ import {
   recordAdvancement,
   rollDie,
   successThreshold,
-} from './rules'
+} from '@/components/AbilityRecord/CheckModal/rules'
 
 const options = { exponent: 4, goodArgument: false, persona: 0, deeds: false, extraDice: 0 }
 
